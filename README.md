@@ -1,16 +1,31 @@
-⚙️ C Programming: Secure Login System
-This repository contains a C implementation of a security gate system with age verification and password protection.
+🛠️ C Programming Collection
+This folder contains a set of C programs developed to demonstrate logic, algorithm design, and low-level data manipulation.
 
-🚀 How it Works
-Age Check: The system verifies if the user is 18 or older using a defined constant.
+📂 Projects Overview
+1. Secure Login System (login_system.c)
+A security gate system with age verification and password protection.
 
-Password Validation: Users have up to 3 attempts to enter the correct PIN.
+Key Features: Age check (18+), 3-attempt PIN validation.
 
-Logic Control: Uses a while loop with a break condition for optimized flow.
+Technical Highlights: Use of #define constants, while loops with break conditions, and flow control.
 
-🛠️ Technical Highlights
-Constants: Used #define for easy configuration of age and password.
+2. Credit Limit Calculator (credit_check.c)
+A financial utility to manage customer balances and credit limits.
 
-Flow Control: Efficient use of if-else and while structures.
+Key Features: Calculates new balances based on charges and credits; alerts if the credit limit is exceeded.
 
-Input/Output: Standard implementation using scanf and printf.
+Technical Highlights: Arithmetic operations, conditional logic, and formatted I/O.
+
+3. Recursive Palindrome Tester (palindrome_test.c)
+A sophisticated tool that checks if a word or phrase is a palindrome, ignoring punctuation and spaces.
+
+Key Features: Data cleaning (removes spaces, commas, and dots) and recursive analysis.
+
+Technical Highlights: Recursion, string manipulation, and pointer-like logic (left/right indices).
+
+🚀 How to Compile and Run
+To run any of these programs, use a C compiler like gcc:
+
+Bash
+gcc name_of_file.c -o output_name
+./output_name
