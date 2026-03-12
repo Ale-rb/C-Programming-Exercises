@@ -1,46 +1,47 @@
 #include <stdio.h>
 
-// Definiamo le costanti per rendere il codice più leggibile e facile da modificare
-#define ETA_MINIMA 18
-#define PASSWORD_CORRETTA 3453
-#define TENTATIVI_MAX 3
+// Constants for readability and easy maintenance
+#define MINIMUM_AGE 18
+#define CORRECT_PASSWORD 3453
+#define MAX_ATTEMPTS 3
 
 int main(void) {
-    int passUtente;
-    int etaUtente;
-    int tentativiRimasti = TENTATIVI_MAX;
+    int userPassword;
+    int userAge;
+    int attemptsLeft = MAX_ATTEMPTS;
 
-    // 1. Controllo Età
-    printf("Inserisci la tua eta: ");
-    scanf("%d", &etaUtente);
+    // 1. Age Check
+    printf("Enter your age: ");
+    scanf("%d", &userAge);
 
-    if (etaUtente < ETA_MINIMA) {
-        puts("Accesso negato: devi essere maggiorenne.");
-        return 0; // Esce subito dal programma
+    if (userAge < MINIMUM_AGE) {
+        puts("Access denied: you must be an adult.");
+        return 0; // Exit program immediately
     }
 
-    // 2. Controllo Password con Tentativi
-    printf("Inserisci la password: ");
-    scanf("%d", &passUtente);
+    // 2. Password Check with Attempts
+    printf("Enter password: ");
+    scanf("%d", &userPassword);
 
-    while (tentativiRimasti > 1) { // Cicla finché ci sono tentativi extra
-        if (passUtente == PASSWORD_CORRETTA) {
-            break; // Esce dal ciclo se la password è giusta
+    while (attemptsLeft > 1) { // Loop while there are extra attempts
+        if (userPassword == CORRECT_PASSWORD) {
+            break; // Exit loop if password is correct
         }
 
-        tentativiRimasti--;
-        printf("Password errata. Riprova, hai ancora %d tentativi: ", tentativiRimasti);
-        scanf("%d", &passUtente);
+        attemptsLeft--;
+        printf("Incorrect password. Try again, you have %d attempts left: ", attemptsLeft);
+        scanf("%d", &userPassword);
     }
 
-    // 3. Verifica finale dopo il ciclo
-    if (passUtente == PASSWORD_CORRETTA) {
+    // 3. Final Verification after loop
+    if (userPassword == CORRECT_PASSWORD) {
         puts("\n========================");
-        puts("   ACCESSO CONSENTITO    ");
+        puts("     ACCESS GRANTED     ");
         puts("========================");
     } else {
-        puts("\nAccesso negato. Tentativi esauriti.");
+        puts("\nAccess denied. Out of attempts.");
     }
 
     return 0;
+}
 }
